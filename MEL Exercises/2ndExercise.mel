@@ -1,0 +1,5 @@
+string $itemsSelected[] = `ls -sl`;
+for ($item in $itemsSelected)
+{
+    move -r 0 1.5 0 $item;
+}

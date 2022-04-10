@@ -1,0 +1,5 @@
+string $itemsSelected[] = `ls -sl`;
+print (size($itemsSelected));
+
+string $nodesSelected[] = `ls -sl -type node`;
+print (size($nodesSelected));

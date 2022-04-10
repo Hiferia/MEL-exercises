@@ -1,0 +1,21 @@
+proc GetTransformsNumber()
+{
+    string $transformsSelected[] = `ls -sl -type transform`;
+    print ("Number of transform: " + size($transformsSelected) + "\n");
+}
+
+proc GetMeshesNumber()
+{
+    string $meshesSelected[] = `ls -sl -type mesh`;
+    print ("Number of meshes: " + size($meshesSelected) + "\n");
+}
+
+proc GetJointsNumber()
+{
+   string $jointsSelected[] = `ls -sl -type joint`;
+    print ("Number of joints: " + size($jointsSelected) + "\n"); 
+}
+
+GetTransformsNumber();
+GetMeshesNumber();
+GetJointsNumber();

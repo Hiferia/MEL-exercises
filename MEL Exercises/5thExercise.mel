@@ -1,0 +1,22 @@
+string $win = "MyUI";
+if (`window -q -ex $win`)
+{
+    deleteUI $win;
+}
+window $win;
+columnLayout -adjustableColumn true;
+    text -label "Name";
+    string $name = `textField`;
+    separator -h 20;
+    button -l "Enter" -backgroundColor 0 0 0.4 -c "printSomething($name, $loginLabel)";
+    separator -h 20;
+    $loginLabel = `text -label "Waiting for login.."`;
+    setParent..;
+showWindow $win;
+
+proc printSomething(string $text, string $label)
+{
+    string $loginText = `textField -q -text $text`;
+    print ("Hello " + $loginText);
+    text -e -l ("Hello " + $loginText) $label;
+}
