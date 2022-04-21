@@ -1,0 +1,15 @@
+global proc RandomizeSelectedObjs(string $sel[])
+{
+    for ($i=0; $i<(size($sel)); $i++)
+    {
+         vector $newPos = `rand <<-10, -10, -10>> <<10, 10, 10>>`;
+         vector $newRot = `rand <<0, 0, 0>> <<360, 360, 360>>`;
+         vector $newScale = `rand <<0.1, 0.1, 0.1>> <<20, 20, 20>>`;
+
+         move -r ($newPos.x) ($newPos.y) ($newPos.z) $sel[$i];
+         rotate -a ($newRot.x) ($newRot.y) ($newRot.z) $sel[$i];
+         scale -a ($newScale.x) ($newScale.y) ($newScale.z) $sel[$i];
+    }
+}
+
+RandomizeSelectedObjs(`ls -sl`);
